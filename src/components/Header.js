@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <nav className="bg-gray-800 py-2 flex items-center">
-            <a href="#" class="flex ml-4 space-x-2 items-center">
+            <a href="/" class="flex ml-4 space-x-2 items-center">
                 <img class="h-8 w-auto" src={logo}></img>
                 <span class="text-white font-bold text-2xl">Bulletin-Board</span>
             </a>

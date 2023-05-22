@@ -11,17 +11,17 @@ const Tabbar = () => {
     return (
         <ul className="flex mb-5 space-x-4">
             <TabBtn
-                text="Recent"
+                text="@ Recent"
                 isActive={activeTab === 'Recent'}
                 onClick={() => handleTabClick('Recent')}
             />
             <TabBtn
-                text="Hot"
+                text="@ Hot"
                 isActive={activeTab === 'Hot'}
                 onClick={() => handleTabClick('Hot')}
             />
             <TabBtn
-                text="Settings"
+                text="@ Settings"
                 isActive={activeTab === 'Settings'}
                 onClick={() => handleTabClick('Settings')}
             />

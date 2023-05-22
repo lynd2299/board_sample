@@ -1,5 +1,5 @@
 import React from 'react';
-import ThreadListItem from '../ThreadListItem'
+import ThreadListItem from './ThreadListItem'
 import threads from '../../data/threads.json'
 
 const ThreadList = () => {
