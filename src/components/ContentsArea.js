@@ -1,6 +1,6 @@
 const ContentArea = ({ children }) => {
     return (
-        <main className="bg-gray-100 flex-1 p-4">
+        <main className="bg-gray-100 flex-1">
             {children}
         </main>
     );

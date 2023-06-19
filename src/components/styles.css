@@ -1,7 +1,0 @@
-.btn-base {
-    @apply bg-blue-500 font-bold text-white rounded-md py-2 px-4
-}
-
-.btn-base:hover {
-    @apply bg-blue-600
-}

@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar/Sidebar";
 import Top from "./components/Top/Top";
 import ThreadDetail from "./components/ThreadDetail";
-import CreateThread from "./components/CreateThread";
+import CreateThread from "./components/CreateTheread/CreateThread";
 import ContentsArea from "./components/ContentsArea";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <Router>
-      <div className="flex flex-col h-screen">
-        <Header />
-        <div className="flex flex-row flex-1">
-          <Sidebar />
+      <div className="app flex flex-col h-screen w-screen bg-gray-100">
+        <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <div className="flex flex-1">
+          {isSidebarOpen && <Sidebar />}
           <ContentsArea>
             <Routes>
               <Route exact path="/" element={<Top />} />

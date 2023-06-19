@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TabBtn from './TabBtn';
+import TabbarBtn from './TabbarBtn';
 
 const Tabbar = () => {
     const [activeTab, setActiveTab] = useState("Recent");
@@ -10,20 +10,20 @@ const Tabbar = () => {
 
     return (
         <ul className="flex mb-5 space-x-4">
-            <TabBtn
+            <TabbarBtn
                 text="@ Recent"
                 isActive={activeTab === 'Recent'}
                 onClick={() => handleTabClick('Recent')}
             />
-            <TabBtn
+            <TabbarBtn
                 text="@ Hot"
                 isActive={activeTab === 'Hot'}
                 onClick={() => handleTabClick('Hot')}
             />
-            <TabBtn
-                text="@ Settings"
-                isActive={activeTab === 'Settings'}
-                onClick={() => handleTabClick('Settings')}
+            <TabbarBtn
+                text="@ Ranking"
+                isActive={activeTab === 'Ranking'}
+                onClick={() => handleTabClick('Ranking')}
             />
         </ul >
     );

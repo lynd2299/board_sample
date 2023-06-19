@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import logo from "../logo.svg"
+import { Link } from "react-router-dom";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const Header = () => {
+const Header = ({ isSidebarOpen, toggleSidebar }) => {
     const [searchQuery, setSearchQuery] = useState("");
 
     const handleSearchChange = (event) => {
@@ -15,16 +17,30 @@ const Header = () => {
 
     return (
         <nav className="bg-gray-800 py-2 flex items-center">
-            <a href="/" class="flex ml-4 space-x-2 items-center">
-                <img class="h-8 w-auto" src={logo}></img>
-                <span class="text-white font-bold text-2xl">Bulletin-Board</span>
-            </a>
-            <form onSubmit={handleSearchSubmit} className="flex items-center">
+            <div className="flex items-center w-1/6">
+                <button
+                    className="px-4 text-gray-400 hover:text-white focus:outline-none"
+                    onClick={toggleSidebar}
+                >
+                    {isSidebarOpen ? (
+                        <XMarkIcon className="h-6 w-6" />
+                    ) : (
+                        <Bars3Icon className="h-6 w-6" />
+                    )}
+                </button>
+                <Link to="/" className="flex items-center flex-grow">
+                    <img className="h-8 w-auto" src={logo} alt="" />
+                    <span className="text-white font-bold text-2xl">
+                        Nice-Board
+                    </span>
+                </Link>
+            </div>
+            <form onSubmit={handleSearchSubmit} className="flex flex-1 ml-4 items-center">
                 <input
                     type="text"
                     value={searchQuery}
                     onChange={handleSearchChange}
-                    className="w-64 bg-gray-700 text-white text-sm rounded-md p-2 ml-8 focus:bg-gray-100 focus:text-gray-900 focus:outline-none"
+                    className="w-1/3 bg-gray-700 text-white text-sm rounded-md p-2 focus:bg-gray-100 focus:text-gray-900 focus:outline-none"
                     placeholder="Search..."
                 />
             </form>
