@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../logo.svg"
 import { Link } from "react-router-dom";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const Header = ({ isSidebarOpen, toggleSidebar }) => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -23,9 +23,9 @@ const Header = ({ isSidebarOpen, toggleSidebar }) => {
                     onClick={toggleSidebar}
                 >
                     {isSidebarOpen ? (
-                        <XMarkIcon className="h-6 w-6" />
+                        <HiX className="h-6 w-6" />
                     ) : (
-                        <Bars3Icon className="h-6 w-6" />
+                        <HiMenu className="h-6 w-6" />
                     )}
                 </button>
                 <Link to="/" className="flex items-center flex-grow">
