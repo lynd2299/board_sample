@@ -17,7 +17,7 @@ const Sidebar = () => {
       <div>
         {/* Create thread */}
         <Link to="/create-thread">
-          <button className="btn-primary mb-4">
+          <button className="btn-primary w-full mb-4">
             スレッドを立てる
           </button>
         </Link>
